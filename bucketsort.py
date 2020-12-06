@@ -17,9 +17,18 @@ def bucket_sort(nums):
     bucketLocation = int(nums[i] * len(nums) )
     bucket[bucketLocation].append(nums[i])
 
-  for j in range(0, len(nums)):
-    bucket[j].sort()
-    
+  # Using Insertion Sort
+  for i in range(0, len(nums)):
+    for j in range(1, len(bucket[i])):
+
+      current = bucket[i][j]
+      prev = j - 1
+      while prev>=0 and current < bucket[i][prev]:
+        bucket[i][prev+1] = bucket[i][prev]
+        prev = prev - 1  
+      bucket[i][prev+1] = current
+  
+
   index = 0
   for i in range(0,len(nums)):
     for j in range(0, len(bucket[i])):
