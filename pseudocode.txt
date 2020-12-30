@@ -1,0 +1,44 @@
+function bubblesort(arr : list of unlisted items)-> list of sorted items
+
+  I.S : Array telah terbentuk dengan n elements dan belum terurut
+  F.S : Array Telah Terurut dengan algoritma bubblesort
+
+  arr : Array dengan N El
+
+Algortima
+    for i in 0 to length(arr)
+        for j in 0 to length(arr) - i - 1 
+            if arr[i] > arr[j+1] then
+                swap { arr[j] , arr[j+1]}
+    return arr
+
+
+
+function bucket_sort(arr : list of unlisted items ,SlotBucket : int)->list of sorted items
+  I.S : Array telah Terbentuk dengan n elements dan belum ter-urut
+  F.S : Array telah terurut dengan algoritma BucketSort
+
+  Arr : Adalah Array dengan N elements
+  Slotbucket : Jumlah bucket yang akan digunakan
+
+inisiasi:
+  buckets = []
+  bucketLocation = 0
+  Sortedbucket = []
+
+Algoritma
+
+for i in 0 to SlotBucket
+    buckets.insert([])
+
+for i in 0 to length(arr)
+    buckets[bucketLocation].insert(arr[i])
+    bucketLocation = bucketLocation + 1
+    if (bucketLocation == SlotBucket) then
+        bucketLocation = 0
+
+for i in 0 to length(buckets)
+    for element in buckets[i]:
+        Sortedbucket.insert(element)
+
+return insertion_Sort(Sortedbucket)
