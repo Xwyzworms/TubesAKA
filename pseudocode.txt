@@ -1,9 +1,9 @@
-function bubblesort(arr : list of unlisted items)-> list of sorted items
+function bubblesort(arr : list of unsorted items)-> list of sorted items
 
   I.S : Array telah terbentuk dengan n elements dan belum terurut
   F.S : Array Telah Terurut dengan algoritma bubblesort
 
-  arr : Array dengan N El
+  arr : Array dengan N Elements
 
 Algortima
     for i in 0 to length(arr)
@@ -14,7 +14,7 @@ Algortima
 
 
 
-function bucket_sort(arr : list of unlisted items ,SlotBucket : int)->list of sorted items
+function bucket_sort(arr : list of unsorted items ,SlotBucket : int)->list of sorted items
   I.S : Array telah Terbentuk dengan n elements dan belum ter-urut
   F.S : Array telah terurut dengan algoritma BucketSort
 
