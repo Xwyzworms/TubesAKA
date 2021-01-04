@@ -27,18 +27,26 @@ inisiasi:
   Sortedbucket = []
 
 Algoritma
-
-for i in 0 to SlotBucket
+#buat bucket sebanyak SlotBucket
+for i in 0 to SlotBucket do
     buckets.insert([])
+end for
 
-for i in 0 to length(arr)
-    buckets[bucketLocation].insert(arr[i])
-    bucketLocation = bucketLocation + 1
-    if (bucketLocation == SlotBucket) then
-        bucketLocation = 0
+#Masukan Element yang ada pada array ke bucket yang sesuai
+for i in 0 to length(arr) do
+  bucketLocation = int(arr[i] * Slotbucket)
+  buckets[bucketLocation].insert(arr[i])
+end for
 
-for i in 0 to length(buckets)
-    for element in buckets[i]:
-        Sortedbucket.insert(element)
+#Lakukan Sorting pada setiap bucket
+for i in 0 to length(buckets) do
+    buckets[i] = insertion_Sort(buckets[i])
+end for
 
-return insertion_Sort(Sortedbucket)
+# Concatenate
+for i in 0 to length(SlotBucket) do
+    for j in 0 to length(buckets[i]) do
+      Sortedbucket.insert(buckets[i][j]) 
+    end for
+end for 
+return Sortedbucket
