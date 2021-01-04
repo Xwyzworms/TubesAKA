@@ -6,15 +6,17 @@ function bubblesort(arr : list of unsorted items)-> list of sorted items
   arr : Array dengan N Elements
 
 Algortima
-    for i in 0 to length(arr)
-        for j in 0 to length(arr) - i - 1 
+    for i in 0 to length(arr) do
+        for j in 0 to length(arr) - i - 1 do 
             if arr[i] > arr[j+1] then
                 swap { arr[j] , arr[j+1]}
+        end for
+    end for
     return arr
 
 
 
-function bucket_sort(arr : list of unsorted items ,SlotBucket : int)->list of sorted items
+function bucket_sort(arr : arr of unsorted items ,SlotBucket : int)->list of sorted items
   I.S : Array telah Terbentuk dengan n elements dan belum ter-urut
   F.S : Array telah terurut dengan algoritma BucketSort
 
@@ -22,9 +24,9 @@ function bucket_sort(arr : list of unsorted items ,SlotBucket : int)->list of so
   Slotbucket : Jumlah bucket yang akan digunakan
 
 inisiasi:
-  buckets = []
-  bucketLocation = 0
-  Sortedbucket = []
+  array buckets <- []
+  int bucketLocation <- 0
+  array Sortedbucket <- []
 
 Algoritma
 #buat bucket sebanyak SlotBucket
@@ -34,13 +36,13 @@ end for
 
 #Masukan Element yang ada pada array ke bucket yang sesuai
 for i in 0 to length(arr) do
-  bucketLocation = int(arr[i] * Slotbucket)
+  bucketLocation <- int(arr[i] * Slotbucket)
   buckets[bucketLocation].insert(arr[i])
 end for
 
 #Lakukan Sorting pada setiap bucket
 for i in 0 to length(buckets) do
-    buckets[i] = insertion_Sort(buckets[i])
+    buckets[i] <- insertion_Sort(buckets[i])
 end for
 
 # Concatenate
